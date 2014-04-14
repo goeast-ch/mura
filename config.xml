@@ -1,0 +1,73 @@
+<plugin>
+<name>Piwik Plugin</name>
+<!-- the package value becomes a part of the directory name where the plugin is installed. -->
+<package>PiwikPlugin</package>
+<directoryFormat>packageOnly</directoryFormat>
+<version>1.0</version>
+<provider>GoEast GmbH</provider>
+<providerURL>http://www.goeast.ch</providerURL>
+<category>Application</category>
+<settings>
+	<setting>
+		<!-- The Name attribute if what you will pull the settings value from the pluginConfig.getSettings('[setting name]') -->
+		<name>PiwikID</name>
+
+		<!-- The Label element acts a reader friendly alias the settings element -->
+		<label>Piwik ID</label>
+
+		<!-- The content of the Hint element show up as a tool tip for the user installing the plugin -->
+		<hint>Insert the ID of the website you will use in this plugin.</hint>
+		<type>text</type>
+		<required>true</required>
+		
+		<!-- The Validation element sets the type of validation to use. OPTIONs (email, date, numeric, regex)-->
+		<validation>numeric</validation>
+
+		<!-- The regex element is user in conjunction with the Validation element being set to regex. -->
+		<regex></regex>
+
+		<!-- The Message element is used to prompt the user when the value submitted does not pass validation. -->
+		<message></message>
+
+		<!-- The Default values element act as the settings default values when the user is first installing the plugin. -->
+		<defaultvalue></defaultvalue>
+
+		<!-- These next two elements are for select boxes.  They should contain ^ delimited list -->
+		<optionlist></optionlist>
+		<optionlabellist></optionlabellist>
+	</setting>
+	<setting>
+		<!-- The Name attribute if what you will pull the settings value from the pluginConfig.getSettings('[setting name]') -->
+		<name>Host</name>
+
+		<!-- The Label element acts a reader friendly alias the settings element -->
+		<label>Host URL</label>
+
+		<!-- The content of the Hint element show up as a tool tip for the user installing the plugin -->
+		<hint>Insert the Host of the Piwik Installation without http:// or https:// (example: stats.yourserver.com).</hint>
+		<type>text</type>
+		<required>true</required>
+		
+		<!-- The Validation element sets the type of validation to use. OPTIONs (email, date, numeric, regex)-->
+		<validation></validation>
+
+		<!-- The regex element is user in conjunction with the Validation element being set to regex. -->
+		<regex></regex>
+
+		<!-- The Message element is used to prompt the user when the value submitted does not pass validation. -->
+		<message></message>
+
+		<!-- The Default values element act as the settings default values when the user is first installing the plugin. -->
+		<defaultvalue></defaultvalue>
+
+		<!-- These next two elements are for select boxes.  They should contain ^ delimited list -->
+		<optionlist></optionlist>
+		<optionlabellist></optionlabellist>
+	</setting>
+</settings>
+
+<eventHandlers>
+	<eventHandler event="onRenderStart" component="eventHandlers.showStatsCode" persist="true" /> 
+</eventHandlers>
+<displayobjects location="global"/>
+</plugin>
