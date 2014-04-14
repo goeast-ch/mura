@@ -8,4 +8,4 @@ Installation Guide
 -----
 
 * Modules > Plugins > Add Plugin
-* Change Settings
+* Change Plagin Settings
